@@ -2,8 +2,10 @@
 
 This code snippet represents a notification bar that can be used to display
 messages or alerts on a web page. The notification bar consists of two text
-elements: a primary text and a secondary text. It is responsive and customizable
-through the CSS variables and Js variables.
+elements: a primary text and a secondary text and accepts a date range for
+alerts to be automatically displayed depending the current date and desired
+range of dates. Additionally, it is responsive and customizable through the CSS
+variables and Js variables.
 
 ## HTML Structure
 
@@ -17,11 +19,13 @@ through the CSS variables and Js variables.
 ## Javascript Code
 
 The JavaScript code is responsible for dynamically populating the primary and
-secondary text elements with content. It sets the text content of the primary
-and secondary elements using the provided variables.
+secondary text elements with content and controlling the visibility of the
+notification bar based on a specific date range.
 
 - The variables creditUnion, day, date, holiday, and openDay are provided to
   hold specific values that will be used to construct the text content.
+- The startDate and endDate variables are set to specific dates and times that
+  define the range during which the notification bar should be visible.
 
 ## CSS Styling
 
