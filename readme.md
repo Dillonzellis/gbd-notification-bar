@@ -1,11 +1,9 @@
 # Notification Bar
 
-This code snippet represents a notification bar that can be used to display
-messages or alerts on a web page. The notification bar consists of two text
-elements: a primary text and a secondary text and accepts a date range for
-alerts to be automatically displayed depending the current date and desired
-range of dates. Additionally, it is responsive and customizable through the CSS
-variables and Js variables.
+The notification bar consists of two text elements: a primary text and a
+secondary text and accepts a date range for alerts to be automatically displayed
+depending the current date and desired range of dates. Additionally, it is
+responsive and customizable through the CSS variables and Js variables.
 
 ## HTML Structure
 
