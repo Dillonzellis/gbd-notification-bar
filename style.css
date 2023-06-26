@@ -1,3 +1,4 @@
+/* Dont copy this selector */
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +7,10 @@
 
 :root {
   --brandingPrimary: #1a4789;
-  --brandingAccent: #f9b233;
+  --brandingAccent: #c70000;
   --max-width: 1500px;
   --container-padding: 1rem;
-  --font-family: "Roboto", sans-serif;
+  --font-family: "Lexend Deca", Helvetica, Arial, Lucida, sans-serif;
 }
 
 .hidden {
