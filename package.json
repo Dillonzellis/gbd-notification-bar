@@ -1,0 +1,16 @@
+{
+  "name": "gbd-notification-bar",
+  "version": "1.0.0",
+  "description": "need to update readme",
+  "main": "app.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
