@@ -9,13 +9,13 @@ const notifications = [
     brandingAccent: '#c70000'
   },
   {
-    primaryText: 'The Midtown Branch will be closed on Tuesday, July 25th',
-    secondaryText: 'We apologize in advance for any inconvenience.',
+    // primaryText: '',
+    secondaryText: 'Excel FCU will never ask you for your online banking information, pin number(s), or password(s).  Beware of fraudsters posing as Excel FCU via text, email or phone. Do not hesitate to call the credit union directly if you have questionable requests for information.',
     startDate: new Date("July 5, 2023 00:00:00"),
-    endDate: new Date("July 25, 2023 23:59:59"),
+    endDate: new Date("July 25, 2024 23:59:59"),
     fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
-    brandingPrimary: '#1B5D6C',
-    brandingAccent: '#37B04C'
+    brandingPrimary: '#D20000',
+    brandingAccent: '#1B5D6C'
   },
 ];
 
@@ -28,17 +28,18 @@ function createNotificationBar(notification) {
   const container = document.createElement("div");
   container.classList.add("container-de", "text-content");
 
-  const primary = document.createElement("div");
-  primary.classList.add("primary-text");
-  primary.textContent = notification.primaryText;
+  if (notification.primaryText) {
+    const primary = document.createElement("div");
+    primary.classList.add("primary-text");
+    primary.textContent = notification.primaryText;
+    container.appendChild(primary);
+  }
 
-  container.appendChild(primary);
 
   if (notification.secondaryText) {
     const secondary = document.createElement("div");
     secondary.classList.add("secondary-text");
     secondary.textContent = notification.secondaryText;
-
     container.appendChild(secondary);
   }
 
