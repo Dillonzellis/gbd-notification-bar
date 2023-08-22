@@ -1,9 +1,9 @@
 const notifications = [
   {
-    primaryText: 'Our Midtown Branch will be closed on Tuesday, August 25.',
+    primaryText: 'Our Midtown Branch will be closed on Tuesday, August 29.',
     secondaryText: 'We apologize for any inconvenience.',
     startDate: new Date("June 10, 2023 17:00:00"),
-    endDate: new Date("August 25, 2023 23:59:59"),
+    endDate: new Date("August 29, 2023 23:59:59"),
     fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
     brandingPrimary: '#164752',
     brandingAccent: '#c70000'
