@@ -1,29 +1,12 @@
 const notifications = [
   {
-    // primaryText: '',
-    secondaryText: 'Excel FCU will never ask you for your online banking information, pin number(s), or password(s).  Beware of fraudsters posing as Excel FCU via text, email or phone. Do not hesitate to call the credit union directly if you have questionable requests for information.',
+    primaryText: "Software Outage!",
+    secondaryText: "Drive Thru Only; Deposits Only. Cards and App are down.",
     startDate: new Date("July 5, 2023 00:00:00"),
     endDate: new Date("July 25, 2024 23:59:59"),
-    fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
-    brandingPrimary: '#D20000',
-    brandingAccent: '#1B5D6C'
-  },
-  {
-    primaryText: 'Our Midtown Branch will be closed on Tuesday, August 29.',
-    secondaryText: 'We apologize for any inconvenience.',
-    startDate: new Date("June 10, 2023 17:00:00"),
-    endDate: new Date("August 29, 2023 23:59:59"),
-    fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
-    brandingPrimary: '#164752',
-    brandingAccent: '#c70000'
-  },
-  {
-    primaryText: 'We will be closed in observance of Labor Day on Monday, September 4.',
-    startDate: new Date("July 5, 2023 00:00:00"),
-    endDate: new Date("September 4, 2023 23:59:59"),
-    fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
-    brandingPrimary: '#0A3161',
-    brandingAccent: '#1B5D6C'
+    fontFamily: "Montserrat, sans-serif;",
+    brandingPrimary: "#D20000",
+    brandingAccent: "#0164A3",
   },
 ];
 
@@ -43,7 +26,6 @@ function createNotificationBar(notification) {
     container.appendChild(primary);
   }
 
-
   if (notification.secondaryText) {
     const secondary = document.createElement("div");
     secondary.classList.add("secondary-text");
@@ -52,12 +34,21 @@ function createNotificationBar(notification) {
   }
 
   notificationBar.style.setProperty("--font-family", notification.fontFamily);
-  notificationBar.style.setProperty("--brandingPrimary", notification.brandingPrimary);
-  notificationBar.style.setProperty("--brandingAccent", notification.brandingAccent);
+  notificationBar.style.setProperty(
+    "--brandingPrimary",
+    notification.brandingPrimary,
+  );
+  notificationBar.style.setProperty(
+    "--brandingAccent",
+    notification.brandingAccent,
+  );
 
   notificationBar.appendChild(container);
 
-  if (currentDate >= notification.startDate && currentDate <= notification.endDate) {
+  if (
+    currentDate >= notification.startDate &&
+    currentDate <= notification.endDate
+  ) {
     notificationBar.classList.toggle("hidden");
   }
 
@@ -66,7 +57,7 @@ function createNotificationBar(notification) {
 
 const container = document.querySelector("#notification-container");
 
-notifications.forEach(notification => {
+notifications.forEach((notification) => {
   const notificationBar = createNotificationBar(notification);
   container.appendChild(notificationBar);
 });

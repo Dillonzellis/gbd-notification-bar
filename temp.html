@@ -1,155 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <title></title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/style.css" rel="stylesheet">
-</head>
+  <body>
+    <style>
+      :root {
+        --brandingPrimary: #1a4789;
+        --brandingAccent: #c70000;
+        --max-width: 1500px;
+        --container-padding: 1rem;
+        --font-family: "Lexend Deca", Helvetica, Arial, Lucida, sans-serif;
+      }
 
-<body>
-  <style>
-    :root {
-      --brandingPrimary: #1a4789;
-      --brandingAccent: #c70000;
-      --max-width: 1500px;
-      --container-padding: 1rem;
-      --font-family: "Lexend Deca", Helvetica, Arial, Lucida, sans-serif;
-    }
+      .hidden {
+        display: none;
+      }
 
-    .hidden {
-      display: none;
-    }
-
-    .notification-bar {
-      font-family: var(--font-family);
-      padding-block: 1.5rem;
-      text-align: center;
-      color: white;
-      background: linear-gradient(359.28deg,
+      .notification-bar {
+        font-family: var(--font-family);
+        padding-block: 1.5rem;
+        text-align: center;
+        color: white;
+        background: linear-gradient(
+          359.28deg,
           var(--brandingPrimary) 11.87%,
-          #000000 194.74%);
-      border-bottom: 5px solid var(--brandingAccent);
-    }
+          #000000 194.74%
+        );
+        border-bottom: 5px solid var(--brandingAccent);
+      }
 
-    .container-de {
-      width: min(var(--max-width), 100% - var(--container-padding) * 2);
-      margin-inline: auto;
-    }
-
-    .text-content {
-      max-width: 80ch;
-      margin-inline: auto;
-
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .primary-text {
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-
-    .secondary-text {
-      font-size: 1rem;
-      font-weight: 400;
-    }
-
-    @media (min-width: 768px) {
       .container-de {
-        --container-padding: 3rem;
+        width: min(var(--max-width), 100% - var(--container-padding) * 2);
+        margin-inline: auto;
+      }
+
+      .text-content {
+        max-width: 80ch;
+        margin-inline: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
       }
 
       .primary-text {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         font-weight: 700;
       }
 
       .secondary-text {
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 400;
       }
-    }
-  </style>
 
-  <div id="notification-container"></div>
+      @media (min-width: 768px) {
+        .container-de {
+          --container-padding: 3rem;
+        }
 
-  <script>
-    const notifications = [
-      {
-        // primaryText: '',
-        secondaryText: 'Excel FCU will never ask you for your online banking information, pin number(s), or password(s).  Beware of fraudsters posing as Excel FCU via text, email or phone. Do not hesitate to call the credit union directly if you have questionable requests for information.',
-        startDate: new Date("July 5, 2023 00:00:00"),
-        endDate: new Date("July 25, 2025 23:59:59"),
-        fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
-        brandingPrimary: '#D20000',
-        brandingAccent: '#1B5D6C'
-      },
-      {
-        primaryText: 'Our Midtown Branch will be closed on Tuesday, August 29.',
-        secondaryText: 'We apologize for any inconvenience.',
-        startDate: new Date("June 10, 2023 17:00:00"),
-        endDate: new Date("August 29, 2023 23:59:59"),
-        fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
-        brandingPrimary: '#164752',
-        brandingAccent: '#c70000'
-      },
-      {
-        primaryText: 'We will be closed in observance of Labor Day on Monday, September 4.',
-        startDate: new Date("July 5, 2023 00:00:00"),
-        endDate: new Date("September 4, 2023 23:59:59"),
-        fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
-        brandingPrimary: '#0A3161',
-        brandingAccent: '#1B5D6C'
-      },
-    ];
+        .primary-text {
+          font-size: 1.75rem;
+          font-weight: 700;
+        }
 
-    const currentDate = new Date();
+        .secondary-text {
+          font-size: 1.25rem;
+          font-weight: 400;
+        }
+      }
+    </style>
 
-    function createNotificationBar(notification) {
-      const notificationBar = document.createElement("div");
-      notificationBar.classList.add("notification-bar", "hidden");
+    <div id="notification-container"></div>
 
-      const container = document.createElement("div");
-      container.classList.add("container-de", "text-content");
+    <script>
+      const notifications = [
+        {
+          primaryText: "Software Outage!",
+          secondaryText:
+            "Drive Thru Only; Deposits Only. Cards and App are down.",
+          startDate: new Date("July 5, 2023 00:00:00"),
+          endDate: new Date("July 25, 2024 23:59:59"),
+          fontFamily: "Montserrat, sans-serif;",
+          brandingPrimary: "#D20000",
+          brandingAccent: "#0164A3",
+        },
+      ];
 
-      if (notification.primaryText) {
-        const primary = document.createElement("div");
-        primary.classList.add("primary-text");
-        primary.textContent = notification.primaryText;
-        container.appendChild(primary);
+      const currentDate = new Date();
+
+      function createNotificationBar(notification) {
+        const notificationBar = document.createElement("div");
+        notificationBar.classList.add("notification-bar", "hidden");
+
+        const container = document.createElement("div");
+        container.classList.add("container-de", "text-content");
+
+        if (notification.primaryText) {
+          const primary = document.createElement("div");
+          primary.classList.add("primary-text");
+          primary.textContent = notification.primaryText;
+          container.appendChild(primary);
+        }
+
+        if (notification.secondaryText) {
+          const secondary = document.createElement("div");
+          secondary.classList.add("secondary-text");
+          secondary.textContent = notification.secondaryText;
+          container.appendChild(secondary);
+        }
+
+        notificationBar.style.setProperty(
+          "--font-family",
+          notification.fontFamily,
+        );
+        notificationBar.style.setProperty(
+          "--brandingPrimary",
+          notification.brandingPrimary,
+        );
+        notificationBar.style.setProperty(
+          "--brandingAccent",
+          notification.brandingAccent,
+        );
+
+        notificationBar.appendChild(container);
+
+        if (
+          currentDate >= notification.startDate &&
+          currentDate <= notification.endDate
+        ) {
+          notificationBar.classList.toggle("hidden");
+        }
+
+        return notificationBar;
       }
 
+      const container = document.querySelector("#notification-container");
 
-      if (notification.secondaryText) {
-        const secondary = document.createElement("div");
-        secondary.classList.add("secondary-text");
-        secondary.textContent = notification.secondaryText;
-        container.appendChild(secondary);
-      }
-
-      notificationBar.style.setProperty("--font-family", notification.fontFamily);
-      notificationBar.style.setProperty("--brandingPrimary", notification.brandingPrimary);
-      notificationBar.style.setProperty("--brandingAccent", notification.brandingAccent);
-
-      notificationBar.appendChild(container);
-
-      if (currentDate >= notification.startDate && currentDate <= notification.endDate) {
-        notificationBar.classList.toggle("hidden");
-      }
-
-      return notificationBar;
-    }
-
-    const container = document.querySelector("#notification-container");
-
-    notifications.forEach(notification => {
-      const notificationBar = createNotificationBar(notification);
-      container.appendChild(notificationBar);
-    });
-  </script>
-</body>
-
+      notifications.forEach((notification) => {
+        const notificationBar = createNotificationBar(notification);
+        container.appendChild(notificationBar);
+      });
+    </script>
+  </body>
 </html>
