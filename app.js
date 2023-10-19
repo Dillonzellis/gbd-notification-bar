@@ -10,20 +10,21 @@ const notifications = [
     brandingAccent: "#1B5D6C",
   },
   {
-    primaryText:
-      "Please mark your calendar.  Our Midtown office will be closed September 26.",
-    secondaryText: "",
+    // primaryText: "",
+    secondaryText:
+      "Our Midtown branch will be closed Tuesday, October 31. We apologize for any inconvenience.",
     startDate: new Date("June 10, 2023 17:00:00"),
-    endDate: new Date("September 26, 2025 23:59:59"),
+    endDate: new Date("September 26, 2027 23:59:59"),
     fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
     brandingPrimary: "#164752",
     brandingAccent: "#c70000",
   },
   {
-    primaryText: "COMING SOON …",
-    secondaryText: "Mobile App update.  A new look.  Enhanced functionality.",
+    // primaryText: "",
+    secondaryText:
+      "In honor of all who served we will be closed Friday, November 10 in observance of Veterans Day.",
     startDate: new Date("July 5, 2022 00:00:00"),
-    endDate: new Date("September 4, 2025 23:59:59"),
+    endDate: new Date("September 4, 2027 23:59:59"),
     fontFamily: '"Lexend Deca", Helvetica, Arial, Lucida, sans-serif',
     brandingPrimary: "#0A3161",
     brandingAccent: "#1B5D6C",
